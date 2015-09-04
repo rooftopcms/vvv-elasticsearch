@@ -23,6 +23,7 @@ if [ ! -d /usr/share/elasticsearch ]
 	version=`echo $url | sed -e 's/.*elasticsearch-\(.*\)\.deb/\1/g'`
 	wget $url
 	sudo dpkg -i elasticsearch-$version.deb
+	invoke-rc.d elasticsearch defaults
 fi
 
 # start ES
